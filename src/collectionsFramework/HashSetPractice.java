@@ -15,7 +15,10 @@ public class HashSetPractice {
         numbers.add(0);
         numbers.add(-7);
         numbers.add(-55);
-//        numbers.add(-55); // HashSet DOES NOT ALLOW DUPLICATES
+        numbers.add(null);
+        numbers.add(null);
+        numbers.add(null); // allows only one null and no duplicates
+
 
         System.out.println(numbers); // [0, -3, 5, -7, 10] // UNORDERED WAY
     }
