@@ -53,7 +53,7 @@ public class Exercise01 {
             e.printStackTrace();
         }
         finally {
-//            file.delete();
+            file.delete();
         }
         System.out.println("End of the program!");
     }
