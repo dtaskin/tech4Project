@@ -1,5 +1,11 @@
 package homeworks;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+
 public class HomeworkR4 {
     // --------TASK 1------- //
 
@@ -42,8 +48,42 @@ public class HomeworkR4 {
         }   return false;
     }
 
+    // ------- TASK 4 ------- //
+
+    public static void checkAge(int age){
+        Date date = new Date();
+        SimpleDateFormat sdt = new SimpleDateFormat("yyyy");
+        int currentYear = Integer.parseInt(sdt.format(date));
+
+        if(((currentYear - age) > 100 || currentYear < age )) System.out.println("AGE IS NOT VALID");
+        else if((currentYear - age) >= 16) System.out.println("AGE IS ALLOWED");
+        else System.out.println("AGE IS NOT ALLOWED");
+    }
+
+    // ------- TASK 5 ------- //
+
+    public static int averageOfEdges(int a, int b, int c){
+        return (Math.max(Math.max(a,b),c) + Math.min(Math.min(a,b),c)) / 2;
+    }
+
+    // ------- TASK 6 ------- //
+
+    public static String[] noA(String[] strings){
+        List<String> list = new ArrayList<>();
+        for(String string : strings){
+            if(!string.toLowerCase().startsWith("a"))
+                list.add(string);
+            else list.add("###");
+        }
+        return new String[]{list.toString()};
+
+    }
+
+
+
     public static void main(String[] args){
-        System.out.println(hasVoWel("ABC"));
+        String[] str = {"appium", "hello", "123", "xyz","apple", "ABC"};
+        System.out.println(Arrays.toString(noA(str)));
 
 
 
