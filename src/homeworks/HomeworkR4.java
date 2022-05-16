@@ -69,26 +69,49 @@ public class HomeworkR4 {
     // ------- TASK 6 ------- //
 
     public static String[] noA(String[] strings){
-        List<String> list = new ArrayList<>();
-        for(String string : strings){
-            if(!string.toLowerCase().startsWith("a"))
-                list.add(string);
-            else list.add("###");
+        String[] str = new String[strings.length];
+        for(int i = 0; i < strings.length; i++){
+            if(strings[i].toLowerCase().startsWith("a"))
+                str[i] = "###";
+            else str[i] = strings[i];
         }
-        return new String[]{list.toString()};
+        return str;
+        }
 
+    // ------- TASK 7 ------- //
+
+    public static int[] no3or5(int[] numbers){
+        int[] arr = new int[numbers.length];
+        for (int i = 0; i < numbers.length; i++) {
+            if(numbers[i] % 15 == 0) arr[i] = 101;
+            else if(numbers[i] % 5 == 0) arr[i] = 99;
+            else if(numbers[i] % 3 == 0) arr[i] = 100;
+            else arr[i] = numbers[i];
+        }
+        return arr;
     }
 
+    // ------- TASK 8 ------- //
 
+    public static int countPrimes(int[] numbers){
+        int count = 0;
+        for(int number : numbers){
+            if(number == 2 || number == 3) count++;
+            else if(number > 3){
+                boolean prime = true;
+                for (int i = 2; i <= number / 2; i++) {
+                    if (number % i == 0) {
+                        prime = false;
+                        break;
+                    }
+                }
+                if (prime) count++;
+            }
+        }
+        return count;
+    }
 
-    public static void main(String[] args){
-        String[] str = {"appium", "hello", "123", "xyz","apple", "ABC"};
-        System.out.println(Arrays.toString(noA(str)));
-
-
-
-
-
+    public static void main(String[] args) {
 
 
         System.out.println("End of the program!");
