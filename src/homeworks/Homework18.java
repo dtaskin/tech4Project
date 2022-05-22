@@ -1,12 +1,9 @@
 package homeworks;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 
-public class HomeworkR4 {
+public class Homework18 {
     // --------TASK 1------- //
 
     public static String noSpace(String str){
