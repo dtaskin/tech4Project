@@ -1,7 +1,5 @@
 package collectionsFramework;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.TreeMap;
@@ -9,62 +7,54 @@ import java.util.TreeMap;
 public class HashMapPractice {
     public static void main(String[] args) {
         /*
-        KEY     - VALUE
-        string - string
-
-        Ukraine - Kiev
-        Spain - Madrid
-        Portugal - Lisbon
-        Italy - Rome
-        US - DC
-        Canada - Ottawa
+        String - String
+        Key - value
+        Ukraine -> Kiev
+        Spain -> Madrid
+        Portugal -> Lisbon
+        Italy -> Roma
+        US -> DC
+        Canada -> Ottawa
          */
-        HashMap<String, String> capitals = new HashMap<>();
-        // USE PUT() METHOD TO ADD KEY-VALUE
+
+        System.out.println("\n---------Understanding Map---------\n");
+        TreeMap<String, String> capitals = new TreeMap<>();
         capitals.put("Ukraine", "Kiev");
         capitals.put("Spain", "Madrid");
         capitals.put("Portugal", "Lisbon");
-        capitals.put("Italy", "Rome");
+        capitals.put("Italy", "Roma");
         capitals.put("US", "DC");
         capitals.put("Canada", "Ottawa");
 
-        //HOW TO PRINT IN A HASHMAP
-        System.out.println(capitals); //{Canada=Ottawa, Ukraine=Kiev, Italy=Rome, Portugal=Lisbon, US=DC, Spain=Madrid}
-        //LinkedHashMap keeps the insertion order
-        LinkedHashMap<String, String> capitals1 = new LinkedHashMap<>();
-        capitals1.put("Ukraine", "Kiev");
-        capitals1.put("Spain", "Madrid");
-        capitals1.put("Portugal", "Lisbon");
-        capitals1.put("Italy", "Rome");
-        capitals1.put("US", "DC");
-        capitals1.put("Canada", "Ottawa");
+        //Printing a HashMap -> {Canada=Ottawa, Ukraine=Kiev, Italy=Roma, Portugal=Lisbon, US=DC, Spain=Madrid}
+        //Printing a LinkedHashMap -> {Ukraine=Kiev, Spain=Madrid, Portugal=Lisbon, Italy=Roma, US=DC, Canada=Ottawa}
+        //Printing a TreeMap -> {Canada=Ottawa, Italy=Roma, Portugal=Lisbon, Spain=Madrid, US=DC, Ukraine=Kiev}
 
-        System.out.println(capitals1); // {Ukraine=Kiev, Spain=Madrid, Portugal=Lisbon, Italy=Rome, US=DC, Canada=Ottawa}
+        System.out.println(capitals);
 
-        System.out.println("\n-------Understanding Map-------\n");
-        TreeMap<String, String> capitals2 = new TreeMap<>();
-        capitals2.put("Ukraine", "Kiev");
-        capitals2.put("Spain", "Madrid");
-        capitals2.put("Portugal", "Lisbon");
-        capitals2.put("Italy", "Rome");
-        capitals2.put("US", "DC");
-        capitals2.put("Canada", "Ottawa");
-
-        // KEYS ARE SORTED
-        System.out.println(capitals2); //{Canada=Ottawa, Italy=Rome, Portugal=Lisbon, Spain=Madrid, US=DC, Ukraine=Kiev}
-
-        // HOW TO GET A PARTICULAR KEY-VALUE PAIR
-
-        System.out.println(capitals.get("Spain")); //Madrid
+        //How to get a particular key-value pair
+        System.out.println(capitals.get("Spain")); // Madrid
         System.out.println(capitals.get("Germany")); // null
-        System.out.println(capitals.get(null)); // null
-
-        System.out.println("\n-----");
+        System.out.println(capitals.get("us")); // null
 
 
+        System.out.println("\n---------Understanding HashMap---------\n");
+        HashMap<Integer, String> students = new HashMap<>();
+        students.put(1, "Alona");
+        students.put(2, "Abdullah");
+        students.put(3, "Abdullah");
+        students.put(4, "Data");
+        students.put(null, "John");
+        students.put(null, "Alex"); // This will replace John with Alex
+        students.put(1, "Daria");
+        students.put(5, null);
+        students.put(6, null);
+        students.put(7, null);
+        students.put(null, null);
 
 
 
-
+        System.out.println(students.size()); // 8
+        System.out.println(students);
     }
 }

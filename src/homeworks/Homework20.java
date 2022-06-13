@@ -51,6 +51,22 @@ public class Homework20 {
     }
 
     //=============== TASK 5 ===============//
+    /*
+
+    public static String reverseSentence(String sentence) {
+        // sentence -> "This is a sentence"
+        if (!sentence.trim().contains(" ")) return "There is not enough words!";
+
+        StringBuilder sb = new StringBuilder();
+        // sentence.trim().split("\\s+") --> ["This", "is", "a", "sentence"] --> "Sentence a is this"
+        String[] sentenceArr = sentence.trim().split("\\s+");
+        for (int i = sentenceArr.length - 1; i >= 0; i--) {
+            sb.append(sentenceArr[i].toLowerCase() + " ");
+        }
+
+        return sb.substring(0, 1).toUpperCase() + sb.substring(1).trim();
+    }
+     */
     public static String reverseSentence(String str){
        String[] strings = str.split(" ");
        if(strings.length < 2) return "There is not enough space";
