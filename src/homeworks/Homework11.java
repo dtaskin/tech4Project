@@ -92,6 +92,25 @@ public class Homework11 {
 
         System.out.println("\n-------TASK-9-------\n");
 
+        /*
+
+          int n1 = 0;
+        int n2 = 1;
+        int total = 0;
+        String message = "";
+
+        for (int i = 0; i < 7; i++) {
+            message += n1 + " - ";
+            total = n1 + n2;
+
+            n1 = n2;
+            n2 = total;
+        }
+
+        System.out.println(message.substring(0, message.length() - 3));
+
+         */
+
         System.out.println("enter a number");
 
         int fib = input.nextInt();

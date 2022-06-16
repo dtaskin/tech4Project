@@ -102,14 +102,6 @@ public class _03_Practice_int_Array {
 
 
 
-
-
-
-
-
-
-
-
         }
 
 
