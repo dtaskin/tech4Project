@@ -24,6 +24,7 @@ public class Exercise02_find_second_greatest {
 
         TreeSet<Integer> uniques = new TreeSet<>(numbers);
         System.out.println(uniques); // [1, 3, 5, 7, 10]
+
         // TREE SET DOES NOT HAVE GET() METHOD SO CONVERT IT BACK TO ARRAYLIST TO GET SECOND LARGEST
 
         ArrayList<Integer> uniquesList = new ArrayList<>(uniques);

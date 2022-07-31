@@ -25,6 +25,21 @@ public class FindMax {
         System.out.println("MaxOfEvery " + maxOfEvery);
 
 
+        int[] sample_list = {1,2,3,4,5,6};
+        int sum = 0;
+
+        for (int i = 0; i < sample_list.length; i++) {
+            sum += sample_list[i];
+        }
+        System.out.println(sum);
+
+        int[] sum_list = new int[6];
+        for (int i = 0; i < sample_list.length; i++) {
+//            sum_list *= sum;
+        }
+
+
+
 
 
     }

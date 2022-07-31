@@ -5,6 +5,7 @@ import java.util.*;
 public class Homework22 {
     //=========== TASK-1==========//
     public static int[] fibonacciSeries(int n) {
+
         int[] arr = new int[n];
 
         arr[0] = 0;
@@ -15,6 +16,19 @@ public class Homework22 {
         }
         return arr;
 
+    }
+    public static int[] fibonacciSeries1Abe(int n) {
+        // 0 1 1 2 3 5
+        int n0 = 0, n1 = 1, n2 = 0;
+        int[] newArr = new int[n];
+        for (int i = 1; i < newArr.length; i++) {
+            newArr[i] = n1;
+            n2 = n0 + n1;
+            n0 = n1;
+            n1 = n2;
+
+        }
+        return newArr;
     }
 
     //=========== TASK-2==========//
@@ -29,6 +43,21 @@ public class Homework22 {
             arr[i] = arr[i - 1] + arr[i - 2];
         }
         return arr[n - 1];
+    }
+    public static int fibonacciSeries2Way2(int n) {
+        // 0 1 1 2 3 5
+        int n0 = 0, n1 = 1, n2 = 1;
+        for (int i = 1; i < n - 1; i++) {
+            n2 = n0 + n1;
+            n0 = n1;
+            n1 = n2;
+        }
+        return n2;
+    }
+
+    public static int fibonacciSeries2Recursion(int n) {
+        if (n <= 1) return n;
+        return fibonacciSeries2Recursion(n - 1) + fibonacciSeries2Recursion(n - 2);
     }
 
     //=========== TASK-3==========//
@@ -57,6 +86,32 @@ public class Homework22 {
         return uniques;
 
     }
+
+    public static int[] findUniques2(int[] a, int[] b) {
+
+        Set<Integer> duplicates = new HashSet<>();
+        for (int first : a) {
+            for (int second : b) {
+                if (first == second) duplicates.add(first);
+            }
+        }
+
+        Set<Integer> nonDuplicates = new HashSet<>();
+
+        for (int i : a) if (!duplicates.contains(i)) nonDuplicates.add(i);
+        for (int i : b) if (!duplicates.contains(i)) nonDuplicates.add(i);
+
+//        int[] nonDupArr = new int[nonDuplicates.size()];
+//        int index = 0;
+//        for (Integer nonDuplicate : nonDuplicates) nonDupArr[index++] = nonDuplicate;
+
+//        int[] nonDupArr = nonDuplicates.stream().mapToInt(i->i).toArray();
+// OR
+//        int[] nonDupArr = list.stream().mapToInt(Integer::intValue).toArray();
+
+        return nonDuplicates.stream().mapToInt(i -> i).toArray();
+    }
+
     //=========== TASK-4==========//
 
     public static boolean isPowerOf3(int number) {
@@ -66,6 +121,24 @@ public class Homework22 {
          */
         return number == 1 || number % 3 == 0;
     }
+
+    public static boolean isPowerOf3a(int number){
+        // 27.0
+        // 27 / 3 = 9
+        // 9 / 3 = 3
+        // 3 / 3 = 1.0
+
+        // 15
+        // 15 / 3 = 5
+        // 5 / 3 = 1
+        if (number < 1 ) return false;
+        double doubleNum = number;
+        while (doubleNum % 3 == 0){
+            doubleNum /= 3;
+        }
+        return doubleNum == 1.0;
+    }
+
 
     //=========== TASK-5==========//
 
@@ -86,6 +159,18 @@ public class Homework22 {
             }
             return duplicates.get(duplicates.size() - 1);
         }
+    }
+
+    public static int firstDuplicate2(int[] nums){
+        int[] dup = {-1, Integer.MAX_VALUE};
+
+        for (int i = 0; i < nums.length - 1; i++)
+            for (int j = i + 1; j < nums.length; j++)
+                if (nums[i] == nums[j] && j - i < dup[1]){
+                    dup[1] = j - i;
+                    dup[0] = nums[i];
+                }
+        return dup[0];
     }
 
     public static void main(String[] args) {

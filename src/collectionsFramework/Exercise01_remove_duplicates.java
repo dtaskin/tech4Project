@@ -40,8 +40,8 @@ public class Exercise01_remove_duplicates {
 
         System.out.println("\n-------Second Way - Using collections--------\n"); // ANY SET DOES NOT ALLOW DUPLICATES
 
-        // TreeSet -> Computer, Mouse, Pen, Phone (WE DONT WANT ALPHABETIC ORDER)
-        // HashSet -> NO PREDICTION OF ORDER (WE DONT WANT THIS WAY TOO)
+        // TreeSet -> Computer, Mouse, Pen, Phone (WE DON'T WANT ALPHABETIC ORDER)
+        // HashSet -> NO PREDICTION OF ORDER (WE DON'T WANT THIS WAY TOO)
         // LinkedHashSet is the one we need for this task
         LinkedHashSet<String> uniques1 = new LinkedHashSet<>(objects);
         System.out.println(uniques1);
